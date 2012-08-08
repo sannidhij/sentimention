@@ -1,0 +1,13 @@
+- @tweets[:results].each do |tweet|
+  - sentiment = Twitter.current_sentiment(tweet[:text])
+  %div{:class => "tweet #{sentiment}"}
+    %p= "#{tweet[:from_user_name]}(@#{tweet[:from_user]}) says -"
+    %p= tweet[:text]
+    %p= "The current sentiment is #{sentiment}"
+    %p= "Would you like to change the sentiment?"
+    = radio_button("tweet", "sentiment", "positive")
+    Positive
+    = radio_button("tweet", "sentiment", "negative")
+    Negative
+    = radio_button("tweet", "sentiment", "neutral")
+    Neutral
