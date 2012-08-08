@@ -1,0 +1,17 @@
+.tweet {
+	border-bottom: 2px solid #DADADA;
+  display: block;
+  font-size: 14px;
+}
+
+.positive {
+	background-color: #33FF99;
+}
+
+.negative {
+	background-color: #FF3333;
+}
+
+.neutral {
+	background-color: #99FFFF;
+}
