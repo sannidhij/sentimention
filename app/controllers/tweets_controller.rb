@@ -1,8 +1,5 @@
 class TweetsController < ApplicationController
-  # def index
-  #   @tweets = Twitter.search "thoughtworks"
-  # end
-  
+
   def refresh
     tweets = Twitter.search("thoughtworks", Tweet.max(:twitter_id))
     tweets[:results].each do |tweet|
@@ -10,4 +7,9 @@ class TweetsController < ApplicationController
     end
   end
   
+  def charts
+    @neutral_count = Tweet.where(:sentiment => "neutral").count
+    @positive_count = Tweet.where(:sentiment => "positive").count
+    @negative_count = Tweet.where(:sentiment => "negative").count
+  end
 end

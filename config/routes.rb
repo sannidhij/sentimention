@@ -14,6 +14,7 @@ Sentimention::Application.routes.draw do
   #   resources :products
   resources :tweets, :only => :index
   
+  match 'tweets/charts' => 'tweets#charts'
   match 'tweets/refresh' => 'tweets#refresh', :as => :refresh_tweets
 
   # Sample resource route with options:

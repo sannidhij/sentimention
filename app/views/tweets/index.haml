@@ -1,4 +1,5 @@
 = button_to "Refresh Tweets", refresh_tweets_path
+= link_to "Charts", tweets_charts_path
 - Tweet.each do |tweet|
   - sentiment = Twitter.current_sentiment(tweet[:original]["text"])
   %div{:class => "tweet #{sentiment}"}
