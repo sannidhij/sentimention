@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   def refresh
     tweets = Twitter.search("thoughtworks")
     tweets[:results].each do |tweet|
-      Tweet.create(original: tweet)
+      Tweet.create(original: tweet, twitter_id: tweet[:id].to_i)
     end
   end
 end

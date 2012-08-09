@@ -1,6 +1,7 @@
 class Tweet
   include Mongoid::Document
   field :original, type: Hash
+  field :twitter_id, type: Integer
   field :sentiment, type: String
   
   after_create :fetch_sentiment
