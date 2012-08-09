@@ -1,9 +1,9 @@
 = button_to "Refresh Tweets", refresh_tweets_path
-- @tweets[:results].each do |tweet|
-  - sentiment = Twitter.current_sentiment(tweet[:text])
+- Tweet.each do |tweet|
+  - sentiment = Twitter.current_sentiment(tweet[:original]["text"])
   %div{:class => "tweet #{sentiment}"}
-    %p= "#{tweet[:from_user_name]}(@#{tweet[:from_user]}) says -"
-    %p= tweet[:text]
+    %p= "#{tweet[:original]["from_user_name"]}(@#{tweet[:original]["from_user"]}) says -"
+    %p= tweet[:original]["text"]
     %p= "The current sentiment is #{sentiment}"
     %p= "Would you like to change the sentiment?"
     = radio_button("tweet", "sentiment", "positive")
