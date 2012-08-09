@@ -12,7 +12,7 @@ Sentimention::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :tweets, :only => :index
+  resources :tweets, :only => [:index, :create] 
   
   match 'tweets/charts' => 'tweets#charts'
   match 'tweets/refresh' => 'tweets#refresh', :as => :refresh_tweets

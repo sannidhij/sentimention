@@ -1,5 +1,10 @@
 class TweetsController < ApplicationController
 
+  def create
+    Tweet.find(params[:id]).sentiment = params[:sentiment]
+    render :nothing => true
+  end
+  
   def refresh
     tweets = Twitter.search("thoughtworks", Tweet.max(:twitter_id))
     tweets[:results].each do |tweet|
