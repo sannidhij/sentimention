@@ -7,9 +7,9 @@
       %p= tweet[:original]["text"]
       %p= "The current sentiment is #{tweet[:sentiment]}"
       %p= "Would you like to change the sentiment?"
-      = radio_button_tag(tweet[:_id], "positive")
+      = radio_button_tag(tweet[:_id], "positive", (tweet["sentiment"] === "positive"))
       Positive
-      = radio_button_tag(tweet[:_id], "negative")
+      = radio_button_tag(tweet[:_id], "negative", (tweet["sentiment"] === "negative"))
       Negative
-      = radio_button_tag(tweet[:_id], "neutral")
+      = radio_button_tag(tweet[:_id], "neutral", (tweet["sentiment"] === "neutral"))
       Neutral
