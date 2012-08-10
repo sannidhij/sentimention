@@ -3,7 +3,7 @@ require 'json'
 
 class Twitter
   def self.search(search_term, last_known_id=nil)
-    search_url = "http://search.twitter.com/search.json?q=#{search_term}"
+    search_url = "http://search.twitter.com/search.json?q=#{search_term}&rpp=100&result_type=recent"
     search_url << "&since_id=#{last_known_id}" if last_known_id
     uri = URI search_url
     response = Net::HTTP.get uri
