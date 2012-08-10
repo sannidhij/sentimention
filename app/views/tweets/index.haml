@@ -1,6 +1,6 @@
 = button_to "Refresh Tweets", refresh_tweets_path
 %p= link_to "Charts", charts_path
-- Tweet.each do |tweet|
+- Tweet.desc(:tweet_date).each do |tweet|
   %form{:id => tweet[:_id]}
     %div{:class => "tweet #{tweet[:sentiment]}"}
       .text
