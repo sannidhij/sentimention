@@ -1,0 +1,67 @@
+#container{:style => "min-width: 400px; height: 750px; margin: 0 auto"}
+
+:javascript
+	$(function () {
+	    var chart;
+	    $(document).ready(function() {
+	        chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'container',
+	                type: 'bar'
+	            },
+	            title: {
+	                text: 'Top Tweeters by Tweet Sentiment'
+	            },
+	            subtitle: {
+	                text: 'Source: twitter.com'
+	            },
+	            xAxis: {
+									categories: #{@top_tweet_user_names},
+	                title: {
+	                    text: 'Top tweeters'
+	                }
+	            },
+	            yAxis: {
+	                min: 0,
+	                title: {
+	                    text: 'Number of tweets',
+	                    align: 'high'
+	                },
+	                labels: {
+	                    overflow: 'justify'
+	                }
+	            },
+	            tooltip: {
+	                formatter: function() {
+	                    return ''+
+	                        this.series.name +': '+ this.y +' tweets';
+	                }
+	            },
+	            plotOptions: {
+	                bar: {
+	                    dataLabels: {
+	                        enabled: true
+	                    }
+	                }
+	            },
+	            legend: {
+	                layout: 'vertical',
+	                align: 'right',
+	                verticalAlign: 'top',
+	                x: -100,
+	                y: 100,
+	                floating: true,
+	                borderWidth: 1,
+	                backgroundColor: '#FFFFFF',
+	                shadow: true
+	            },
+	            credits: {
+	                enabled: false
+	            },
+	            series: #{@trend_chart_data}
+	        });
+	    });
+    
+	});
+
+= link_to "Back to list", charts_path

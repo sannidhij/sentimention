@@ -21,6 +21,7 @@ Sentimention::Application.routes.draw do
     collection do
       get 'pie_chart'
       get 'trend_chart'
+      get 'top_tweeters_chart'
     end
   end
   # Sample resource route with options:
