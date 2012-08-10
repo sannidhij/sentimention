@@ -8,6 +8,8 @@ gem 'rails', '3.2.7'
 gem 'haml'
 gem 'mongoid', '~> 3.0.0'
 gem 'jquery-rails'
+gem 'rspec-rails'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,8 +21,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   # gem 'sass-rails',   '~> 3.2.3'
   # gem 'coffee-rails', '~> 3.2.1'
-
-  gem 'rspec-rails'
 
 end
 
