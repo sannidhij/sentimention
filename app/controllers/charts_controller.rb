@@ -26,11 +26,12 @@ class ChartsController < ApplicationController
   end
   
   def top_tweeters_chart
-    @top_tweet_user_names = UserAggregates.all.map { |ua| ua['_id']['user_name'] }
-    total_trend = UserAggregates.all.map { |ua| ua['value']['total_tweets'] }
-    positive_trend = UserAggregates.all.map { |ua| ua['value']['positive_tweets'] }
-    negative_trend = UserAggregates.all.map { |ua| ua['value']['negative_tweets'] }
-    neutral_trend = UserAggregates.all.map { |ua| ua['value']['neutral_tweets'] }    
+    user_criteria = UserAggregates.desc('value.total_tweets').limit(10)
+    @top_tweet_user_names = user_criteria.map { |ua| ua['_id']['user_name'] }
+    total_trend = user_criteria.map { |ua| ua['value']['total_tweets'] }
+    positive_trend = user_criteria.map { |ua| ua['value']['positive_tweets'] }
+    negative_trend = user_criteria.map { |ua| ua['value']['negative_tweets'] }
+    neutral_trend = user_criteria.map { |ua| ua['value']['neutral_tweets'] }    
     @trend_chart_data = "[{name: 'Negative', data: #{negative_trend}, color: '#FF3030'}, 
                           {name: 'Neutral', data: #{neutral_trend}, color: '#97FFFF'}, 
                           {name: 'Positive', data: #{positive_trend}, color: '#228B22'},

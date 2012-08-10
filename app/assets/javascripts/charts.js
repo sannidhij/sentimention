@@ -91,7 +91,7 @@ function show_top_tweeters_chart(topTweetUserNames, chartData) {
                 type: 'bar'
             },
             title: {
-                text: 'Top Tweeters by Tweet Sentiment'
+                text: 'Top 10 Tweeters by Tweet Sentiment'
             },
             subtitle: {
                 text: 'Source: twitter.com'
