@@ -3,6 +3,7 @@ class Tweet
   field :original, type: Hash
   field :twitter_id, type: Integer
   field :sentiment, type: String
+  field :tweet_date, type: Date
   
   after_create :fetch_sentiment
 

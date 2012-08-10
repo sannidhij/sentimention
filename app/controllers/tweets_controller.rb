@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
   def refresh
     tweets = Twitter.search("thoughtworks", Tweet.max(:twitter_id))
     tweets[:results].each do |tweet|
-      Tweet.create(original: tweet, twitter_id: tweet[:id].to_i)
+      Tweet.create(original: tweet, twitter_id: tweet[:id].to_i, tweet_date: Date.parse(tweet[:created_at]))
     end
   end
   

@@ -20,6 +20,7 @@ Sentimention::Application.routes.draw do
   resources :charts, :only => :index do
     collection do
       get 'pie_chart'
+      get 'trend_chart'
     end
   end
   # Sample resource route with options:
