@@ -81,3 +81,66 @@ function show_trend_chart(dates, chartData) {
 			});
 		});
 }
+
+function show_top_tweeters_chart(topTweetUserNames, chartData) {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'bar'
+            },
+            title: {
+                text: 'Top Tweeters by Tweet Sentiment'
+            },
+            subtitle: {
+                text: 'Source: twitter.com'
+            },
+            xAxis: {
+								categories: topTweetUserNames,
+                title: {
+                    text: 'Top tweeters'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of tweets',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return ''+
+                        this.series.name +': '+ this.y +' tweets';
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -100,
+                y: 100,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: '#FFFFFF',
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: chartData
+        });
+    });
+  
+}
