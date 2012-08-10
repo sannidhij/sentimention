@@ -1,17 +1,26 @@
+body {
+	font-family: Arial;
+}
+
 .tweet {
-	border-bottom: 2px solid #DADADA;
   display: block;
-  font-size: 14px;
+  margin: 6px 0;
+  padding: 6px 10px;
+  font-size: 16px;
+	border-width: 2px;
 }
 
 .positive {
-	background-color: #33FF99;
+	background-color: #EEFFCC;
+	border-color: #C6DD97;
 }
 
 .negative {
-	background-color: #FF3333;
+	background-color: #FFE0E0;
+	border-color: #FFC2C2;
 }
 
 .neutral {
-	background-color: #99FFFF;
+	background-color: #CCFFFF;
+	border-color: #CCCCFF;
 }
