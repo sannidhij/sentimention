@@ -24,3 +24,18 @@ body {
 	background-color: #CCFFFF;
 	border-color: #CCCCFF;
 }
+
+.sentiment-change {
+	display: inline-block;
+	padding-top: 20px;
+	vertical-align: top;
+}
+
+.tweet .text {
+	display: inline-block;
+	width: 80%;
+}
+
+.radio {
+	padding: 0px;
+}
