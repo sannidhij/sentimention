@@ -31,10 +31,10 @@ class ChartsController < ApplicationController
     positive_trend = UserAggregates.all.map { |ua| ua['value']['positive_tweets'] }
     negative_trend = UserAggregates.all.map { |ua| ua['value']['negative_tweets'] }
     neutral_trend = UserAggregates.all.map { |ua| ua['value']['neutral_tweets'] }    
-    @trend_chart_data = "[{name: 'Total', data: #{total_trend} }, 
-                          {name: 'Positive', data: #{positive_trend} },
-                          {name: 'Negative', data: #{negative_trend} },
-                          {name: 'Neutral', data: #{neutral_trend} }]"
+    @trend_chart_data = "[{name: 'Negative', data: #{negative_trend}, color: '#FF3030'}, 
+                          {name: 'Neutral', data: #{neutral_trend}, color: '#97FFFF'}, 
+                          {name: 'Positive', data: #{positive_trend}, color: '#228B22'},
+                          {name: 'Total', data: #{total_trend} }]"
   end
   
 end
