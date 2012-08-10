@@ -1,7 +1,10 @@
 class TweetsController < ApplicationController
 
   def create
-    Tweet.find(params[:id]).sentiment = params[:sentiment]
+    tweet = Tweet.find(params[:id])
+    tweet.sentiment = params[:sentiment]
+    tweet.save
+    puts "sentiment: #{tweet.sentiment}"
     render :nothing => true
   end
   
