@@ -13,7 +13,7 @@ class ChartsController < ApplicationController
     @trend = {}
     Tweet.asc(:tweet_date).each do |tweet|
       values = @trend[tweet[:tweet_date].strftime("%m-%d-%Y")] || {positive: 0, negative: 0, neutral: 0}
-      values[tweet.sentiment.to_sym] = (values[tweet.sentiment] || 0) + 1
+      values[tweet.sentiment.to_sym] = (values[tweet.sentiment.to_sym] || 0) + 1
       @trend[tweet[:tweet_date].strftime("%m-%d-%Y")] = values
     end
     @dates = @trend.keys
