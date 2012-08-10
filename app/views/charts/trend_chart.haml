@@ -1,50 +1,6 @@
 #container{:style => "min-width: 400px; height: 400px; margin: 0 auto"}
 
 :javascript
-  $(function () {
-      var chart;
-      $(document).ready(function() {
-          chart = new Highcharts.Chart({
-              chart: {
-                  renderTo: 'container',
-                  type: 'line',
-                  marginRight: 130,
-                  marginBottom: 25
-              },
-              title: {
-                  text: 'Daily Social Sentiment',
-                  x: -20 //center
-              },
-              xAxis: {
-                  categories: #{@dates}
-              },
-              yAxis: {
-                  title: {
-                      text: 'Tweets'
-                  },
-                  plotLines: [{
-                      value: 0,
-                      width: 1,
-                      color: '#808080'
-                  }]
-              },
-              tooltip: {
-                  formatter: function() {
-                          return '<b>'+ this.series.name +'</b><br/>'+
-                          this.x +': '+ this.y +'°C';
-                  }
-              },
-              legend: {
-                  layout: 'vertical',
-                  align: 'right',
-                  verticalAlign: 'top',
-                  x: -10,
-                  y: 100,
-                  borderWidth: 0
-              },
-              series: #{@trend_chart_data}
-          });
-      });
-    
-  });
+  show_trend_chart(#{@dates}, #{@trend_chart_data})
+
 = link_to "Back to list", charts_path

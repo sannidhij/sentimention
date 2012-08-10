@@ -1,42 +1,6 @@
 #container{:style => "min-width: 400px; height: 400px; margin: 0 auto"}
 
 :javascript
-  $(function () {
-      var chart;
-      var colors = Highcharts.getOptions().colors;
-      $(document).ready(function() {
-          chart = new Highcharts.Chart({
-              chart: {
-                  renderTo: 'container',
-                  plotBackgroundColor: null,
-                  plotBorderWidth: null,
-                  plotShadow: false
-              },
-              title: {
-                  text: 'Sentiment distribution of tweets that mention "thoughtworks"'
-              },
-              tooltip: {
-                  formatter: function() {
-                      return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
-                  }
-              },
-              plotOptions: {
-                  pie: {
-                      allowPointSelect: true,
-                      cursor: 'pointer',
-                      dataLabels: {
-                          enabled: false
-                      },
-                      showInLegend: true
-                  }
-              },
-              series: [{
-                  type: 'pie',
-                  name: 'Sentiment Distribution',
-                  data: #{@pie_chart_data}
-              }]
-          });
-      });
-    
-  });
+  show_pie_chart(#{@pie_chart_data})
+
 = link_to "Back to list", charts_path
