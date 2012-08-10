@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+body {
+	font-family: Arial;
+}
+
+.tweet {
+  display: block;
+  margin: 6px 0;
+  padding: 6px 10px;
+  font-size: 16px;
+	border-width: 2px;
+}
+
+.positive {
+	background-color: #EEFFCC;
+	border-color: #C6DD97;
+}
+
+.negative {
+	background-color: #FFE0E0;
+	border-color: #FFC2C2;
+}
+
+.neutral {
+	background-color: #CCFFFF;
+	border-color: #CCCCFF;
+}
+
+.sentiment-change {
+	display: inline-block;
+	padding-top: 20px;
+	vertical-align: top;
+}
+
+.tweet .text {
+	display: inline-block;
+	width: 80%;
+}
+
+.radio {
+	padding: 0px;
+}
