@@ -11,5 +11,5 @@ test:
       hosts:
         - localhost:27017
         
-test:
-  uri: mongodb://sentimention:sentimention@ds037467-a.mongolab.com:37467/heroku_app6775421
+production:
+  uri: <%= ENV['MONGOLAB_URI'] %>
