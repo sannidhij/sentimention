@@ -14,4 +14,4 @@ test:
 production:   
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      uri: mongodb://sentimention:sentimention@ds037467-a.mongolab.com:37467/heroku_app6775421
