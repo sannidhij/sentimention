@@ -10,3 +10,6 @@ test:
       database: sentimention_test
       hosts:
         - localhost:27017
+        
+test:
+  uri: <%= ENV['MONGOLAB_URI'] %>
