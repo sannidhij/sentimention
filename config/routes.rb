@@ -24,6 +24,8 @@ Sentimention::Application.routes.draw do
       get 'top_tweeters_chart'
     end
   end
+  
+  root to: 'tweets#index', as: 'tweets'
   # Sample resource route with options:
   #   resources :products do
   #     member do
