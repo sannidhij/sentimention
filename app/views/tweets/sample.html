@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Title</title>
+  
+	<script>
+	    $(function() {	
+	 			$( ".radioset" ).buttonset();
+	    });
+	</script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+	<div class="row">
+    <div class="four columns">
+			<h3>Title</h3>
+		</div>
+		<div class="eight columns">
+			<span class="medium secondary button">Refresh tweets</span>
+			<span class="medium secondary button">Charts</span>
+  	</div>
+	</div>
+	<div class="row">
+		<div class="eight columns">
+			<div class="panel">
+				<div style="margin-bottom: 20px;">This is the first tweet, it's quite a long tweet.'</div>
+				<div id="radioset1" class="radioset">
+		        <input type="radio" id="radioset1-1" name="radio" /><label for="radioset1-1">Positive</label>
+		        <input type="radio" id="radioset1-2" name="radio" checked="checked" /><label for="radioset1-2">Neutral</label>
+		        <input type="radio" id="radioset1-3" name="radio" /><label for="radioset1-3">Negative</label>
+		    </div>
+			</div>
+			<div class="panel">
+				<div style="margin-bottom: 20px;">Another tweet</div>
+				<div id="radioset2" class="radioset">
+		        <input type="radio" id="radioset2-1" name="radio2" /><label for="radioset2-1">Positive</label>
+		        <input type="radio" id="radioset2-2" name="radio2" checked="checked" /><label for="radioset2-2">Neutral</label>
+		        <input type="radio" id="radioset2-3" name="radio2" /><label for="radioset2-3">Negative</label>
+		    </div>
+			</div>
+		</div>
+		
+    <div class="four columns">
+			<div class="large secondary button" style="width:100%; margin-bottom:20px;">
+				Add
+			</div>
+			<div class="panel">Mentions</div>
+			<div class="panel">Tagged</div>
+		</div>
+	</div>
+</body>
+</html>
