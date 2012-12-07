@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Sentimention</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+ 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+	<script>
+	    $(function() {
+					$.each($(".manual-override"), function(index, button_container) { $(button_container).buttonset(); })
+	    });
+	</script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+	<div class="row">
+    <div class="four columns">
+			<h3>Sentimention</h3>
+		</div>
+		<div class="eight columns">
+			<span class="large secondary button">Refresh tweets</span>
+			<span class="large secondary button">Charts</span>
+  	</div>
+	</div>
+	<div class="row">
+		<div class="eight columns">
+			<div class="panel">
+				<div style="margin-bottom: 20px;">This is the first tweet, it's quite a long tweet.'</div>
+				<div class="manual-override">
+		        <input type="radio" id="radio1" name="radio" /><label for="radio1">Positive</label>
+		        <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Neutral</label>
+		        <input type="radio" id="radio3" name="radio" /><label for="radio3">Negative</label>
+		    </div>
+			</div>
+			<div class="panel">
+				<div style="margin-bottom: 20px;">Another tweet</div>
+				<div class="manual-override">
+		        <input type="radio" id="radio1" name="radio" /><label for="radio1">Positive</label>
+		        <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Neutral</label>
+		        <input type="radio" id="radio3" name="radio" /><label for="radio3">Negative</label>
+		    </div>
+			</div>
+			<div class="panel">
+				<div style="margin-bottom: 20px;">And another one</div>
+				<div class="manual-override">
+		        <input type="radio" id="radio1" name="radio" /><label for="radio1">Positive</label>
+		        <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Neutral</label>
+		        <input type="radio" id="radio3" name="radio" /><label for="radio3">Negative</label>
+		    </div>
+			</div>
+		</div>
+    <div class="four columns">
+			<div class="large secondary button" style="width:100%; margin-bottom:20px;">
+				Add
+			</div>
+			<div class="panel">Mentions</div>
+			<div class="panel">Tagged</div>
+		</div>
+	</div>
+</body>
+</html>
