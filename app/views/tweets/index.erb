@@ -9,10 +9,9 @@
 </div>
 <div class="row">
 	<div class="ten columns">
-		<div class="panel">
-      <% Tweet.desc(:tweet_date).each do |tweet| %>
+    <% Tweet.desc(:tweet_date).each do |tweet| %>
         <form id="#{tweet[:_id]}">
-          <div class="tweet <%=tweet[:sentiment]%>">
+          <div class="tweet panel <%=tweet[:sentiment]%>">
             <div class="text">
               <p><%="#{tweet[:original]['from_user_name']}(@#{tweet[:original]['from_user']}) says -"%></p>
               <p><%="#{tweet[:original]['text']}"%></p>
@@ -30,8 +29,7 @@
             </div>
           </div>
         </form>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 <script>
