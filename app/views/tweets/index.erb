@@ -1,0 +1,41 @@
+<%= button_to "Refresh Tweets", :action => 'refresh' %>
+<%= link_to "Charts", charts_path %>
+
+<% Tweet.desc(:tweet_date).each do |tweet| %>
+  <form id="#{tweet[:_id]}">
+    <div class="tweet <%=tweet[:sentiment]%>">
+      <div class="text">
+        <p><%="#{tweet[:original]['from_user_name']}(@#{tweet[:original]['from_user']}) says -"%></p>
+        <p><%="#{tweet[:original]['text']}"%></p>
+      </div>
+      <div class="sentiment-change ui-buttonset">
+        <input type="radio" id="<%=tweet[:_id]%>-positive" name="radio" />
+        <label for="<%=tweet[:_id]%>-positive">Positive</label>
+        <input type="radio" id="<%=tweet[:_id]%>-neutral" name="radio" checked="checked" />
+        <label for="<%=tweet[:_id]%>-neutral">Neutral</label>
+        <input type="radio" id="<%=tweet[:_id]%>-negative" name="radio" />
+        <label for="<%=tweet[:_id]%>-negative">Negative</label>
+      </div>
+    </div>
+  </form>
+<% end %>
+<script>
+    $(function() {	
+ 			$( ".sentiment-change" ).buttonset();
+    });
+</script>
+
+
+
+
+
+<!-- <div id="radioset1" class="radioset">
+    <input type="radio" id="radioset1-1" name="radio" /><label for="radioset1-1">Positive</label>
+    <input type="radio" id="radioset1-2" name="radio" checked="checked" /><label for="radioset1-2">Neutral</label>
+    <input type="radio" id="radioset1-3" name="radio" /><label for="radioset1-3">Negative</label>
+</div>
+<div id="radioset2" class="radioset">
+    <input type="radio" id="radioset2-1" name="radio2" /><label for="radioset2-1">Positive</label>
+    <input type="radio" id="radioset2-2" name="radio2" checked="checked" /><label for="radioset2-2">Neutral</label>
+    <input type="radio" id="radioset2-3" name="radio2" /><label for="radioset2-3">Negative</label>
+</div> -->
