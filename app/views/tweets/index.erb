@@ -9,11 +9,14 @@
         <p><%="#{tweet[:original]['text']}"%></p>
       </div>
       <div class="sentiment-change ui-buttonset">
-        <input type="radio" id="<%=tweet[:_id]%>-positive" name="radio" />
+        <input type="radio" id="<%=tweet[:_id]%>-positive" value="positive" name="<%=tweet[:_id]%>" 
+          <%="checked" if (tweet["sentiment"] === "positive")%>/>
         <label for="<%=tweet[:_id]%>-positive">Positive</label>
-        <input type="radio" id="<%=tweet[:_id]%>-neutral" name="radio" checked="checked" />
+        <input type="radio" id="<%=tweet[:_id]%>-neutral" value="neutral" name="<%=tweet[:_id]%>" 
+          <%="checked" if (tweet["sentiment"] === "neutral")%> />
         <label for="<%=tweet[:_id]%>-neutral">Neutral</label>
-        <input type="radio" id="<%=tweet[:_id]%>-negative" name="radio" />
+        <input type="radio" id="<%=tweet[:_id]%>-negative" value="negative" name="<%=tweet[:_id]%>" 
+          <%="checked" if (tweet["sentiment"] === "negative")%>/>
         <label for="<%=tweet[:_id]%>-negative">Negative</label>
       </div>
     </div>
@@ -24,18 +27,3 @@
  			$( ".sentiment-change" ).buttonset();
     });
 </script>
-
-
-
-
-
-<!-- <div id="radioset1" class="radioset">
-    <input type="radio" id="radioset1-1" name="radio" /><label for="radioset1-1">Positive</label>
-    <input type="radio" id="radioset1-2" name="radio" checked="checked" /><label for="radioset1-2">Neutral</label>
-    <input type="radio" id="radioset1-3" name="radio" /><label for="radioset1-3">Negative</label>
-</div>
-<div id="radioset2" class="radioset">
-    <input type="radio" id="radioset2-1" name="radio2" /><label for="radioset2-1">Positive</label>
-    <input type="radio" id="radioset2-2" name="radio2" checked="checked" /><label for="radioset2-2">Neutral</label>
-    <input type="radio" id="radioset2-3" name="radio2" /><label for="radioset2-3">Negative</label>
-</div> -->

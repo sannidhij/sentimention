@@ -16,6 +16,7 @@ Sentimention::Application.routes.draw do
   
   match 'tweets/charts' => 'tweets#charts'
   match 'tweets/refresh' => 'tweets#refresh', :as => :refresh_tweets
+  match 'tweets/sample' => 'tweets#sample', :as => :sample
 
   resources :charts, :only => :index do
     collection do
