@@ -8,7 +8,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="ten columns">
+	<div class="eight columns">
     <% Tweet.desc(:tweet_date).each do |tweet| %>
         <form id="#{tweet[:_id]}">
           <div class="tweet panel <%=tweet[:sentiment]%>">
@@ -31,7 +31,16 @@
         </form>
     <% end %>
   </div>
+  <div class="four columns">
+	  <%= form_for SearchTerm.new do |f| %>
+	   	<%= f.text_field :term %>
+		<%= f.submit%>
+ 	  <% end %>
+	  
+	  <%= SearchTerm.all.map(&:term) %>
+  </div>
 </div>
+
 <script>
     $(function() {	
  			$( ".sentiment-change" ).buttonset();
